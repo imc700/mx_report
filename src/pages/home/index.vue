@@ -3,7 +3,7 @@
 
         <div class="home_input">
             <el-input placeholder="请输入百度文库文档链接 example: https://wenku.baidu.com/view/da511019227916888486d78c.html"
-                      v-model="search_text">
+                      v-model="search_text" class="input-box">
                 <el-button slot="append" icon="el-icon-search" @click="down_doc"></el-button>
             </el-input>
         </div>
@@ -102,6 +102,14 @@
     .home_input {
         line-height: 60px;
     }
+	.input-box {
+		position:fixed;
+		left:50%;
+		top:30%;
+		transform: translate(-50%,50%);
+		width:600px;
+		
+	}
 
 </style>
 
