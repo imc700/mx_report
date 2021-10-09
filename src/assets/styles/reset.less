@@ -1,0 +1,94 @@
+ * {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  font-family: "PingFangSC-Regular", "PingFang SC","Microsoft YaHei", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: break-all;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size:100%;
+  font-weight: 500;
+}
+button, input, select, textarea {
+  font-size: 100%;
+}
+textarea {
+  resize: none;
+  font-family: inherit;
+}
+address, cite, dfn, em, i, var {
+  font-style: normal;
+}
+ul, ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+q:after, q:before {
+  content: ""
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 修改输入框的 placeholder 颜色 */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #B0B9BF;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #B0B9BF;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #B0B9BF;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #B0B9BF;
+}
+
+/* 输入框的选中样式 */
+input,
+textarea,
+input:focus,
+textarea:focus {
+  -webkit-appearance: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+/* 去除ie输入框自带的清除按钮 */
+input::-ms-clear,
+input::-ms-reveal {
+  display:none;
+}
+/* 去除input属性为number时右边的 +、-号 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input {
+  -moz-appearance:textfield;
+}
+
