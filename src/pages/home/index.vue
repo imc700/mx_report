@@ -26,12 +26,16 @@
         methods: {
             down_doc: function () {
                 axios
-                    .get("/web/get_doc_url?doc=" + this.search_text)
-                    .then((response) => {
-                        console.log(response.data);
-                        window.location.href = response.data;
+                    .get("/web/wenku/get_doc_url?doc=" + this.search_text)
+                    .then((response) => {					
+                        if ((response.data.content).indexOf("http") != -1) {
+							window.location.href = response.data.content;
+                        } else {
+                            this.$message.error(response.data.content);
+                        }
                     })
                     .catch((error) => {
+                        this.$message.error('Server wrong! 请联系作者.');
                         console.log(error);
                     })
                     .finally(() => (console.log()));
@@ -108,7 +112,7 @@
 		top:30%;
 		transform: translate(-50%,50%);
 		width:600px;
-		
+
 	}
 
 </style>
