@@ -25,20 +25,24 @@
         },
         methods: {
             down_doc: function () {
-                axios
-                    .get("/web/wenku/get_doc_url?doc=" + this.search_text)
-                    .then((response) => {					
-                        if ((response.data.content).indexOf("http") != -1) {
-							window.location.href = response.data.content;
-                        } else {
-                            this.$message.error(response.data.content);
-                        }
-                    })
-                    .catch((error) => {
-                        this.$message.error('Server wrong! 请联系作者.');
-                        console.log(error);
-                    })
-                    .finally(() => (console.log()));
+                if (this.search_text.indexOf('wenku') != -1) {
+                    axios
+                        .get("/web/wenku/get_doc_url?doc=" + this.search_text)
+                        .then((response) => {
+                            if ((response.data.content).indexOf("http") != -1) {
+                                window.location.href = response.data.content;
+                            } else {
+                                this.$message.error(response.data.content);
+                            }
+                        })
+                        .catch((error) => {
+                            this.$message.error('Server wrong! 请联系作者.');
+                            console.log(error);
+                        })
+                        .finally(() => (console.log()));
+                }else {
+                    this.$message.error('Need the right url, Please!');
+                }
             }
 
             // longChange: function (val){
@@ -106,14 +110,15 @@
     .home_input {
         line-height: 60px;
     }
-	.input-box {
-		position:fixed;
-		left:50%;
-		top:30%;
-		transform: translate(-50%,50%);
-		width:600px;
 
-	}
+    .input-box {
+        position: fixed;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, 50%);
+        width: 600px;
+
+    }
 
 </style>
 
