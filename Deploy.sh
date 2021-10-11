@@ -12,6 +12,7 @@ else
 	docker rmi -f registry.cn-hangzhou.aliyuncs.com/rancher_k8s_ks02/k8s:vue_tools
 fi
 #获取容器镜像
+docker login --username=himc700 --password=Hanxu7456 registry.cn-hangzhou.aliyuncs.com
 docker pull registry.cn-hangzhou.aliyuncs.com/rancher_k8s_ks02/k8s:vue_tools
 # 运行容器，这里给容器命名为vue_tools
 docker run -d -p 80:80 --name=vue_tools registry.cn-hangzhou.aliyuncs.com/rancher_k8s_ks02/k8s:vue_tools
