@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <h1>更多精彩,敬请期待...</h1>
+      <h1>更多精彩,敬请期待...wx:imc700</h1>
     </el-row>
   </div>
 </template>
