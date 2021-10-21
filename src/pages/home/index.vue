@@ -46,7 +46,12 @@ export default {
                 if ((response.data.content).indexOf("http") != -1) {
                   window.location.href = response.data.content;
                 } else {
-                  this.$message.error(response.data.content);
+                    let content = response.data.content;
+                    if (content.indexOf('200012') != -1) {
+                        this.$message.error("暂不支持付费文档!");
+                    }else {
+                        this.$message.error(content);
+                    }
                 }
               })
               .catch((error) => {
