@@ -41,7 +41,7 @@ export default {
       if (this.search_code.indexOf('-') != -1) {
         if (this.search_text.indexOf('wenku') != -1) {
           axios
-              .get("/web/wenku/get_doc_url/" + this.search_code + "?doc=" + this.search_text)
+              .get("/bd/wenku/get_doc_url/" + this.search_code + "?doc=" + this.search_text)
               .then((response) => {
                 if ((response.data.content).indexOf("http") != -1) {
                   window.location.href = response.data.content;
@@ -70,7 +70,7 @@ export default {
     query_code: function () {
       if (this.search_code.indexOf('-') != -1) {
         axios
-            .get("/web/wenku/get_code_count/" + this.search_code)
+            .get("/bd/wenku/get_code_count/" + this.search_code)
             .then((response) => {
               if ((response.data.content).indexOf("not") != -1) {
                 this.$message.error(response.data.content);
@@ -94,7 +94,7 @@ export default {
     // },
     // get_datas: function (){
     //   axios
-    //       .get("/web/metric/get_data/android_error/" + this.how_long)
+    //       .get("/bd/metric/get_data/android_error/" + this.how_long)
     //       .then((response) => {
     //         this.android_error = response.data;
     //       })
@@ -104,7 +104,7 @@ export default {
     //       })
     //       .finally(() => (this.loading = false));
     //   axios
-    //       .get("/web/metric/get_data/ios_error/" + this.how_long)
+    //       .get("/bd/metric/get_data/ios_error/" + this.how_long)
     //       .then((response) => {
     //         this.ios_error = response.data;
     //       })
@@ -114,7 +114,7 @@ export default {
     //       })
     //       .finally(() => (this.loading = false));
     //   axios
-    //       .get("/web/metric/get_data/server_error/" + this.how_long)
+    //       .get("/bd/metric/get_data/server_error/" + this.how_long)
     //       .then((response) => {
     //         this.server_error = response.data;
     //       })
@@ -124,7 +124,7 @@ export default {
     //       })
     //       .finally(() => (this.loading = false));
     //   axios
-    //       .get("/web/metric/get_data/mac_error/" + this.how_long)
+    //       .get("/bd/metric/get_data/mac_error/" + this.how_long)
     //       .then((response) => {
     //         this.mac_error = response.data;
     //       })
@@ -134,7 +134,7 @@ export default {
     //       })
     //       .finally(() => (this.loading = false));
     //   axios
-    //       .get("/web/metric/get_data/windows_error/" + this.how_long)
+    //       .get("/bd/metric/get_data/windows_error/" + this.how_long)
     //       .then((response) => {
     //         this.windows_error = response.data;
     //       })
